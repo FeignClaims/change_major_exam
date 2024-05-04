@@ -1,0 +1,692 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2025-02-04T15:36:49+08:00" /><meta property="og:title" content="3. Replace string" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="jrz2020/3/" />
+<meta property="og:site_name" content="计软智网转专业试题回忆版、模拟题及参考解答" />
+<meta property="og:description" content="Write an program which inputs a string and find the wanted character string, then replace it with your given string, then output the result. If the wanted character string appears more than once, r..." />
+<meta name="description" content="Write an program which inputs a string and find the wanted character string, then replace it with your given string, then output the result. If the wanted character string appears more than once, r..." />
+
+    <title>3. Replace string &#8212; 计软智网转专业试题回忆版、模拟题及参考解答</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/theme.css?v=ae8a9af6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=cd85ae70"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/jquery.min.js?v=94f7166b"></script>
+    <script src="../../_static/zoom-image.js?v=56ef8405"></script>
+    <script>let toggleHintShow = '点击展开';</script>
+    <script>let toggleHintHide = '点击隐藏';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/translations.js?v=beaddf03"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/tabs.js?v=3030b3cb"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'jrz2020/3/index';</script>
+    <link rel="canonical" href="https://change-major-exam.readthedocs.io/jrz2020/3/" />
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="4. Set" href="../4/" />
+    <link rel="prev" title="2. Number tower" href="../2/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="2025-02-04 15:36:49"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">计软智网转专业试题回忆版、模拟题及参考解答</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/FeignClaims/change_major_exam" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">关于文档</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING/">参与贡献</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">学习建议</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../board/">计软智网转专业学习建议</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../board/math/">工科数学分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../board/cpp/">C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../board/interview/">面试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../board/math/">工科数学分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../board/cpp/">C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../board/sophomore/discrete_mathematics/">离散数学</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../board/sophomore/digital_logic_circuit/">数字逻辑电路</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../board/sophomore/physics/">大学物理 (B)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../board/interview/">面试</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">回忆试题</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../solution_preface/">解答参考的说明</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../">计软智 2020 年试题</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../1/">1. Translate the input floating point to amount in words</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2/">2. Number tower</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3. Replace string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4/">4. <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Set</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5/">5. Implement <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> using <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">ForwardList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span></code> interface</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../jrz2021/">计软智 2021 年试题</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../jrz2021/1/">1. <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">two_smallest</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../jrz2021/2/">2. <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">&lt;</span><span class="n">cstring</span><span class="o">&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../jrz2021/3/">3. <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Polynomial</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../jrz2021/4/">4. Complete the program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../jrz2021/5/">5. Inheritance and class hierarchy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../jrz2022/">计软智 2022 年试题</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../jrz2022/fill/">1. Fill in the blanks in the following programs. (20 scores)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2022/fill/1/">1. (10 scores)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2022/fill/2/">2. (10 scores)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../jrz2022/programming/">2. Write programs according to the requests. (80 scores)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2022/programming/1/">1. (20 scores)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2022/programming/2/">2. (20 scores)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2022/programming/3/">3. (20 scores)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2022/programming/4/">4. (20 scores)</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../jrz2023/">计软智 2023 年试题</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../jrz2023/read/">1. Write the output of the following programs.</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2023/read/1/">1.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2023/read/2/">2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2023/read/3/">3.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2023/read/4/">4.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2023/read/5/">5.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../jrz2023/fill/">2. Fill in blanks in the following programs.</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../jrz2023/programming/">3. Write programs according to the requests.</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2023/programming/1/">1.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2023/programming/2/">2.</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../jrz2024/">计软智 2024 年试题</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../jrz2024/read/">1. 阅读程序, 写出输出结果 (20 分)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2024/read/1/">1.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2024/read/2/">2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2024/read/3/">3.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2024/read/4/">4.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2024/read/5/">5.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../jrz2024/fill/">2. 完善程序 (每空 2 分)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2024/fill/1/">1.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2024/fill/2/">2.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../jrz2024/programming/">3. 按要求编写程序 (60 分)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2024/programming/1/">1.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jrz2024/programming/2/">2.</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wa2022/">网安 2022 年回忆内容</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../wa2022_simulation/">网安 2022 年模拟题</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../wa2022_simulation/read/">1. 阅读程序题</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2022_simulation/read/lifetime/">1. 对象的生命期 (带输出的构造与析构)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2022_simulation/read/exception/">2. 异常的抛出与捕获</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2022_simulation/read/pointer_carray_and_cstring/">3.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2022_simulation/read/class_hierarchy/">4.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2022_simulation/read/recursion/">5.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wa2022_simulation/fill/">2. 补全程序题</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../wa2022_simulation/programming/">3. 编写程序题</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2022_simulation/programming/counting_words/">1. 统计单词数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2022_simulation/programming/ip/">2. 编写 IP 地址类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2022_simulation/programming/ip_serialization/">3. 二进制读写 IP 地址</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wa2022_simulation/short_answer/">4. 简答题</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../wa2023/">网安 2023 年试题</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../wa2023/read/">1. 阅读程序题 (每题 8 分, 共 40 分)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2023/read/1/">1.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2023/read/2/">2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2023/read/3/">3.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2023/read/4/">4.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2023/read/5/">5.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wa2023/fill/">2. 补全程序题 (5 空, 每空 2 分, 共 10 分)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../wa2023/programming/">3. 编写程序题 (30 分)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2023/programming/1/">1. 螺旋矩阵 (10 分)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2023/programming/2/">2. 拷贝构造、析构函数, 类的继承与多态, 运算符重载 (20 分)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wa2023/short_answer/">4. 简答题 (20 分)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../wa2024/">网安 2024 年试题</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../wa2024/read/">1. 阅读程序题 (每题 8 分, 共 40 分)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2024/read/1/">1.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2024/read/2/">2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2024/read/3/">3.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2024/read/4/">4.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2024/read/5/">5.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wa2024/fill/">2. 补全程序题 (共 2 题, 每题 5 空, 每空 2 分, 共 20 分)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../wa2024/programming/">3. 编写程序题 (共 2 题, 每题 20 分)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2024/programming/1/">1.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wa2024/programming/2/">2.</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/change_major_exam/blob/main/jrz2020/3/index.rst?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/change_major_exam/edit/main/jrz2020/3/index.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/change_major_exam/issues/new?title=Issue%20on%20page%20%2Fjrz2020/3/index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="创建议题"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>3. Replace string</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="replace-string">
+<h1>3. Replace string<a class="headerlink" href="#replace-string" title="Link to this heading">#</a></h1>
+<div class="dropdown keyword admonition">
+<p class="admonition-title">点击查看考点</p>
+<p>C 风格数组</p>
+</div>
+<p>Write an program which inputs a string and find the wanted character string, then replace it with your given string, then output the result. If the wanted character string appears more than once, replace them all.</p>
+<p>Restriction: You are not allowed to use any content inside <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">&lt;</span><span class="n">cstring</span><span class="o">&gt;</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">&lt;</span><span class="n">string</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span></code> or <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">&lt;</span><span class="n">algorithm</span><span class="o">&gt;</span></code>.</p>
+<p>Note: The length of the wanted character string and the given string may be different.</p>
+<div class="dropdown translation admonition">
+<p class="admonition-title">翻译</p>
+<p>编写一个程序, 它接受一个字符串 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">string</span></code>, 想要替换的字符串 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">expected</span></code> 和替换后的字符串内容 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">replace</span></code>, 在 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">string</span></code> 中查找所有 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">expected</span></code> 并替换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">replace</span></code>.</p>
+<p>限制: 你不能使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">&lt;</span><span class="n">cstring</span><span class="o">&gt;</span></code> 或 <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">&lt;</span><span class="n">string</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span></code> 中的任何内容.</p>
+<p>注意: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">expected</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">replace</span></code> 的长度可能不同.</p>
+</div>
+<p>For example,</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>input:
+<span class="linenos">2</span>  string: C++11 is like a new language.
+<span class="linenos">3</span>  find: is
+<span class="linenos">4</span>  replace: was
+<span class="linenos">5</span>
+<span class="linenos">6</span>output:
+<span class="linenos">7</span>  C++11 was like a new language.
+</pre></div>
+</div>
+<div class="dropdown solution admonition">
+<p class="admonition-title">点击查看参考解答</p>
+<p>没有参考解答, 只有之前回答别人类似的题时的解释. 其中大量手搓了 STL 算法, 而本题并没有限制 STL 算法的使用, <strong>所以别看解答代码很多, 其实除了 replace 函数本身都是有现成的.</strong></p>
+<p>对于函数 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">replace</span><span class="p">(</span><span class="n">主字符串</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">子字符串</span><span class="w"> </span><span class="n">substr</span><span class="p">,</span><span class="w"> </span><span class="n">替换字符串</span><span class="w"> </span><span class="n">replace</span><span class="p">)</span></code>,</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">通过临时空间进行</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">原地进行</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p><a class="extlink-godbolt reference external" href="https://godbolt.org/z/6jrxvY353">[在线代码 6jrxvY353]</a></p>
+<ul class="simple">
+<li><p>首先从 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">str</span></code> 中查找 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">substr</span></code> 子字符串, 返回子字符串在主字符串中第一个字符的下标.</p></li>
+<li><p>如果没找到, 那结束; 如果找到, 继续以后步骤.</p></li>
+<li><p>创建一个临时数组 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">buffer</span></code>, 用于暂存结果.</p></li>
+<li><p>拷贝&quot;<code class="code highlight cpp docutils literal highlight-cpp"><span class="n">str</span></code> 的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">substr</span></code> 子字符串之前的部分&quot;到 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">buffer</span></code> 中.</p></li>
+<li><p>拷贝&quot;<code class="code highlight cpp docutils literal highlight-cpp"><span class="n">replace</span></code> 字符串&quot;到 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">buffer</span></code> 中.</p></li>
+<li><p>拷贝&quot;<code class="code highlight cpp docutils literal highlight-cpp"><span class="n">str</span></code> 的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">substr</span></code> 子字符串之后的部分&quot;到 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">buffer</span></code> 中.</p></li>
+<li><p>将 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">buffer</span></code> 中内容拷贝回 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">str</span></code> 中.</p></li>
+<li><p>由于前后长度可能不同，需要在新的字符串末尾添加上 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\0&#39;</span></code> 表示这是字符串的结束.</p></li>
+</ul>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p><a class="extlink-godbolt reference external" href="https://godbolt.org/z/eWeGna1Pq">[在线代码 eWeGna1Pq]</a></p>
+<ul class="simple">
+<li><p>首先从 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">str</span></code> 中查找 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">substr</span></code> 子字符串, 返回子字符串在主字符串中第一个字符的下标.</p></li>
+<li><p>如果没找到, 那结束; 如果找到, 继续以后步骤.</p></li>
+<li><p>比较 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">substr</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">replace</span></code> 的大小.</p>
+<ul>
+<li><p>如果 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">replace</span></code> 更大, 说明需要腾出更多空间, 则子字符串后面的字符应该向右移动来腾出这些空间.</p></li>
+<li><p>如果 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">substr</span></code> 更大, 说明替换后这里会有多余的空间, 则子字符串后面的字符应该向左移动, 来填掉这些空间.</p></li>
+</ul>
+</li>
+<li><p>调整好空间后, 将字符替换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">replace</span></code> 的字符.</p></li>
+<li><p>由于前后长度可能不同, 需要在新的字符串末尾添加上 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\0&#39;</span></code> 表示这是字符串的结束.</p></li>
+</ul>
+</div></div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>由于别人问的这个题函数为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">replace</span><span class="p">(</span><span class="n">主字符串</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">子字符串</span><span class="w"> </span><span class="n">substr</span><span class="p">,</span><span class="w"> </span><span class="n">替换字符串</span><span class="w"> </span><span class="n">replace</span><span class="p">)</span></code>, 参数非常糟糕, 所以替换字符串比原来的子字符串更长时, 替换结果并不正确, 但这是合理的——参数只提供了字符串本身的长度, 并没有给出整个字符数组所能使用的空间大小, 则实现不该假设字符数组所能使用的空间大于字符串当前长度.</p>
+</div>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../2/"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">2. Number tower</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../4/"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">4. <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Set</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： FeignClaims
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, FeignClaims.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  最后更新于 2025-02-04 15:36:49.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

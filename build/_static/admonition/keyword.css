@@ -1,0 +1,22 @@
+html[data-theme="light"] {
+  --custom-color-keyword: #ceeaf1;
+  --custom-color-keyword-text: #222832;
+  --custom-color-keyword-highlight: #284e5a;
+}
+html[data-theme="dark"] {
+  --custom-color-keyword: #284e5a;
+  --custom-color-keyword-text: #ced6dd;
+  --custom-color-keyword-highlight: #ceeaf1;
+}
+
+div.admonition.keyword {
+  border-color: var(--custom-color-keyword-highlight);
+}
+div.admonition.keyword > .admonition-title {
+  background-color: var(--custom-color-keyword);
+  color: var(--custom-color-keyword-text);
+}
+div.admonition.keyword > .admonition-title:after {
+  color: var(--custom-color-keyword-highlight);
+  content: "\f08d";
+}
