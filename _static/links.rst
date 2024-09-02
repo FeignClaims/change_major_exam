@@ -1,0 +1,1 @@
+.. _小宝转专业资料汇总: https://gitlab.com/seuxiaobao/change_major

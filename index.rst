@@ -11,7 +11,8 @@
 
 如果有 C++ 相关问题, 可以前往 :ref:`我的 C++ 答疑室 <question_board:main>` 进行提问.
 
-群号: 730899457
+- 计软智网转专业群群号: 730899457
+- 小宝转专业大群群号: 570346898
 
 .. hint:: 
 
@@ -21,8 +22,13 @@
   :caption: 关于文档
   :maxdepth: 1
 
-  board/index.rst
   CONTRIBUTING.md
+
+.. toctree::
+  :caption: 学习建议
+  :maxdepth: 1
+
+  board/index.rst
 
 .. toctree::
   :caption: 回忆试题
