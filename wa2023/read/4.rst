@@ -5,7 +5,7 @@
 .. admonition:: 点击查看考点
   :class: dropdown, keyword
 
-  存储周期
+  生命周期
 
 .. literalinclude:: 4.cpp
   :language: cpp
