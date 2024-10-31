@@ -64,11 +64,6 @@ html_theme_options = {
             "name": "GitHub",
             "url": "https://github.com/FeignClaims/change_major_exam",
             "icon": "fa-brands fa-github",
-        },
-        {
-            "name": "Gitee",
-            "url": "https://gitee.com/FeignClaims/change_major_exam",
-            "icon": "fa-custom fa-gitee",
         }
     ],
     'repository_url': 'https://github.com/FeignClaims/change_major_exam',
@@ -100,4 +95,3 @@ html_extra_path = [
 
 def setup(app):
     app.add_css_file("theme.css")
-    app.add_js_file("gitee_icon.js")
