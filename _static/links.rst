@@ -1,3 +1,3 @@
 .. _`小宝转专业资料汇总`: https://gitlab.com/seuxiaobao/change_major
-.. _`小宝转专业资料汇总-课程相关-C++`: https://gitlab.com/seuxiaobao/change_major/-/tree/main/4.%E8%AF%BE%E7%A8%8B%E7%9B%B8%E5%85%B3/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E5%92%8C%E8%AF%AD%E8%A8%80%EF%BC%88cpp%EF%BC%89?ref_type=heads
-.. _`小宝转专业资料汇总-转专业政策`: https://gitlab.com/seuxiaobao/change_major/-/tree/main/1.%E8%BD%AC%E4%B8%93%E4%B8%9A%E6%94%BF%E7%AD%96?ref_type=heads
+.. _`小宝转专业资料汇总-课程相关-C++`: https://gitlab.com/seuxiaobao/change_major/-/tree/main/4.%E8%AF%BE%E7%A8%8B%E7%9B%B8%E5%85%B3/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E5%92%8C%E8%AF%AD%E8%A8%80%EF%BC%88cpp%EF%BC%89
+.. _`小宝转专业资料汇总-转专业政策`: https://gitlab.com/seuxiaobao/change_major/-/tree/main/1.%E8%BD%AC%E4%B8%93%E4%B8%9A%E6%94%BF%E7%AD%96
