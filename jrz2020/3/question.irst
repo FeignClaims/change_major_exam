@@ -9,7 +9,7 @@ Note: The length of the wanted character string and the given string may be diff
 
   编写一个程序, 它接受一个字符串 :cpp:`string`, 想要替换的字符串 :cpp:`expected` 和替换后的字符串内容 :cpp:`replace`, 在 :cpp:`string` 中查找所有 :cpp:`expected` 并替换为 :cpp:`replace`.
 
-  限制: 你不能使用 :cpp:`<string>`, :cpp:`<cstring>`, :cpp:`<string.h>` 或 :cpp:`<algorithm>` 中的任何内容.
+  限制: 你不能使用 :cpp:`<string>`, :cpp:`<cstring>` 或 :cpp:`<string.h>` 中的任何内容.
 
   注意: :cpp:`expected` 和 :cpp:`replace` 的长度可能不同.
 
