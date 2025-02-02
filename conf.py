@@ -59,14 +59,15 @@ html_show_sourcelink = False
 
 html_theme = 'sphinx_book_theme'
 html_theme_options = {
-    "icon_links": [
+    'icon_links': [
         {
-            "name": "GitHub",
-            "url": "https://github.com/FeignClaims/change_major_exam",
-            "icon": "fa-brands fa-github",
+            'name': 'GitHub',
+            'url': 'https://github.com/FeignClaims/change_major_exam',
+            'icon': 'fa-brands fa-github',
         }
     ],
     'repository_url': 'https://github.com/FeignClaims/change_major_exam',
+    'search_as_you_type': True,
     'show_nav_level': 0,
     'show_prev_next': True,
     'show_toc_level': 2,
