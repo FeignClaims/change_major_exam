@@ -6,6 +6,6 @@
   :maxdepth: 1
   :caption: 目录
 
-  counting_words/main.rst
-  ip/main.rst
-  ip_serialization/main.rst
+  counting_words/index
+  ip/index
+  ip_serialization/index

@@ -6,5 +6,5 @@
    :maxdepth: 1
    :caption: 目录
 
-   1/main.rst
+   1/index
    2.rst

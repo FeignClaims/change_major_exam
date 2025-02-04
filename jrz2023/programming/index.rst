@@ -7,4 +7,4 @@
   :maxdepth: 1
 
   1.rst
-  2/main.rst
+  2/index

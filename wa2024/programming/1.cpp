@@ -76,7 +76,7 @@ class Year_month_day {
 //   ...
 //
 // 应该都会写, 所以我就用 <algorithm> 简单写一下了……是的, 插入排序就只需三四行代码
-// 范围、迭代器和算法: https://question-board.readthedocs.io/faq/range_iterator_and_algorithm/main.html
+// 范围、迭代器和算法: https://question-board.readthedocs.io/faq/range_iterator_and_algorithm
 template <typename Iter>
 void insertion_sort(Iter first, Iter last) {
   for (Iter iter = first; iter != last; ++iter) {
@@ -118,7 +118,7 @@ void insertion_sort(Iter first, Iter last) {
   }
 }
 
-// 随机数的生成: https://question-board.readthedocs.io/faq/generate_random_number/main.html
+// 随机数的生成: https://question-board.readthedocs.io/faq/generate_random_number
 auto generate_random_year_month_day() -> Year_month_day {
   static std::mt19937 gen{std::default_random_engine{}()};
   return Year_month_day{std::uniform_int_distribution<>{1970, 2023}(gen),

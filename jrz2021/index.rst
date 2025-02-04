@@ -18,8 +18,8 @@
   :maxdepth: 1
   :caption: Table of Contents
 
-  1/main.rst
-  2/main.rst
-  3/main.rst
-  4/main.rst
-  5/main.rst
+  1/index
+  2/index
+  3/index
+  4/index
+  5/index
