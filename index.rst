@@ -28,19 +28,19 @@
   :caption: 学习建议
   :maxdepth: 1
 
-  board/index.rst
+  board/index
 
 .. toctree::
   :caption: 回忆试题
   :maxdepth: 1
 
   solution_preface.rst
-  jrz2020/index.rst
-  jrz2021/index.rst
-  jrz2022/index.rst
-  jrz2023/index.rst
-  jrz2024/index.rst
+  jrz2020/index
+  jrz2021/index
+  jrz2022/index
+  jrz2023/index
+  jrz2024/index
   wa2022.rst
-  wa2022_simulation/index.rst
-  wa2023/index.rst
-  wa2024/index.rst
+  wa2022_simulation/index
+  wa2023/index
+  wa2024/index

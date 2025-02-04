@@ -14,7 +14,7 @@
   :maxdepth: 1
   :caption: 目录
 
-  read/index.rst
+  read/index
   fill.rst
-  programming/index.rst
+  programming/index
   short_answer.rst

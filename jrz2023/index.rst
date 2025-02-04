@@ -18,6 +18,6 @@
   :caption: 目录
   :maxdepth: 2
 
-  read/index.rst
+  read/index
   fill.rst
-  programming/index.rst
+  programming/index

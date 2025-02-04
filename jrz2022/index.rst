@@ -12,5 +12,5 @@
   :maxdepth: 2
   :caption: Table of Contents
 
-  fill/index.rst
-  programming/index.rst
+  fill/index
+  programming/index

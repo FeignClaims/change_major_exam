@@ -10,8 +10,8 @@
   :maxdepth: 1
   :caption: 目录
 
-  lifetime/index.rst
-  exception/index.rst
+  lifetime/index
+  exception/index
   pointer_carray_and_cstring.rst
   class_hierarchy.rst
   recursion.rst
